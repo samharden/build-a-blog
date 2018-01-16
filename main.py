@@ -1,3 +1,4 @@
+
 from flask import Flask, request, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
 
@@ -39,7 +40,7 @@ def index():
                                 blog_post_entries = blog_post_entries,
                                 search_terms = search_terms,
                                 )
-                                
+
     return render_template('home.html',title="Blog",
         blog_post_entries=blog_post_entries)
 
