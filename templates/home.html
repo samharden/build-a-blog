@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    {% if blog_post_entries|length == 0 %}
+    <p>No Blogs yet</p>
+    {% else %}
+
+    <div class="container">
+  <div class="panel-content" style="margin-left:20%; margin-right:20%; margin-top:5%">
+  <div class="col-md-8 col-sm-6 col-xs-12" style="width:95%;">
+    {% if search_terms|length == 0 %}
+    <div class="row">{% for post in blog_post_entries %}
+
+          <h3><a href = "view?post_id={{post.id}}">{{post.title}}</a></h3>
+        <br>
+          <p>{{post.post}}</p>
+          <p>Author: {{post.name}}</p>
+        <hr/>
+        <br>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+
+    <h1>Search Results</h1>
+
+
+    <div class="row">{% for post in blog_post_entries %}
+          {% if search_terms in post.post %}
+          <h3><a href = "view?post_id={{post.id}}">{{post.title}}</a></h3>
+        <br>
+          <p>{{post.post}}</p>
+          <p>Author: {{post.name}}</p>
+        <hr/>
+        <br>
+          
+          {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% endif %}
+  </div>
+</div>
+</div>
+    {% endif %}
+
+
+
+
+
+
+{% endblock %}
