@@ -1,1 +1,1 @@
-web: gunicorn main --log-file=-
+web: gunicorn builfd-a-blog-lc:main
