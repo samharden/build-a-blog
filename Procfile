@@ -1,1 +1,1 @@
-web: gunicorn builfd-a-blog-lc:main
+web: gunicorn build-a-blog-lc:main
