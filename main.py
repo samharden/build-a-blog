@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 ## I Hate Mamp, so I'm using a straight up MySQL db... ##
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://blogmaster:spillyourguts@localhost:3306/blogmaster'
-app.config['mysql://ba4ee7c07c02a0:97201782@us-cdbr-iron-east-05.cleardb.net/heroku_53dc666f66e6252?reconnect=true']
+app.config['SQLALCHEMY_DATABASE_URI'] = ['mysql://ba4ee7c07c02a0:97201782@us-cdbr-iron-east-05.cleardb.net/heroku_53dc666f66e6252?reconnect=true']
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
